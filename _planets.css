@@ -2,6 +2,69 @@
  * PLANETAS, ATMOSFERAS, ANÉIS, TOOLTIP
  */
 
+/* === VARIÁVEIS AVANÇADAS PARA REALISMO ULTRA === */
+:root {
+  /* Escalas planetárias e solares */
+  --sun-size: 90px;
+  --mercury-size: 12px;
+  --venus-size: 20px;
+  --earth-size: 22px;
+  --mars-size: 16px;
+  --jupiter-size: 50px;
+  --saturn-size: 44px;
+  --uranus-size: 32px;
+  --neptune-size: 30px;
+
+  /* Cores e texturas planetárias */
+  --color-mercury-main: #bdbdbd;
+  --color-mercury-dark: #616161;
+  --color-mercury-crater: #a0a0a0;
+  --color-venus-main: #ffe082;
+  --color-venus-cloud: #fffde7cc;
+  --color-earth-main: #2196f3;
+  --color-earth-land: #43a047;
+  --color-earth-cloud: #fff8;
+  --color-mars-main: #ff7043;
+  --color-mars-dark: #bf360c;
+  --color-mars-pole: #fff;
+  --color-jupiter-main: #ffe0b2;
+  --color-jupiter-band: #bcaaa4;
+  --color-jupiter-spot: #d2691e;
+  --color-saturn-main: #fffde7;
+  --color-saturn-band: #ffe082;
+  --color-saturn-shadow: #bfa76a;
+  --color-uranus-main: #b2ebf2;
+  --color-uranus-band: #0097a7;
+  --color-neptune-main: #b3e5fc;
+  --color-neptune-band: #01579b;
+
+  /* Atmosferas e efeitos ópticos */
+  --color-atmosphere-earth: #7ecfffcc;
+  --color-atmosphere-gas: #e0e7efcc;
+  --color-atmosphere-venus: #fffde7cc;
+  --color-atmosphere-mars: #ff704344;
+  --color-atmosphere-neptune: #b3e5fc44;
+  --color-bloom: #fffbe7;
+  --color-eclipse: #222831;
+  --color-chromatic1: #ffe082;
+  --color-chromatic2: #2196f3;
+  --color-aurora: #00ffe088;
+  --color-clouds: #fff8;
+  --color-storm: #ff0a;
+  --color-ring-saturn: #e7d3a1cc;
+  --color-ring-uranus: #b2ebf2cc;
+  --color-ring-grain: #fff2;
+
+  /* Efeitos ópticos e granulação */
+  --opacity-atmosphere: 0.85;
+  --opacity-ring: 0.6;
+  --opacity-grain: 0.18;
+  --grain-size: 1.5px;
+  --grain-blur: 0.7px;
+  --bloom-strength: 1.18;
+  --z-tooltip: 100;
+}
+
 /* === PLANETAS REALISTAS === */
 
 /* .planet — Base de todos os planetas */
@@ -14,134 +77,308 @@
   will-change: box-shadow, filter;
 }
 
-/* Planetas individuais: Sol, Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano, Netuno */
-.planet.sun {
-  width: var(--sun-size); height: var(--sun-size);
-  background: radial-gradient(circle at 60% 40%, #fffde7 0%, #ffe082 60%, #ff9800 100%);
-  box-shadow: 0 0 64px 32px #fffde7, 0 0 0 2px #ff9800 inset;
-  filter: blur(0.5px) brightness(1.2) drop-shadow(0 0 32px #fffde7);
-}
+/* === TEXTURAS E DETALHES PLANETÁRIOS ULTRA REALISTAS === */
 
 .planet.mercury {
   width: var(--mercury-size); height: var(--mercury-size);
-  background: radial-gradient(circle at 40% 60%, #bdbdbd 0%, #616161 100%);
-  box-shadow: 0 0 8px 2px #bdbdbd, 0 0 0 1px #616161 inset;
+  background:
+    radial-gradient(circle at 30% 70%, var(--color-mercury-crater) 0 12%, transparent 13%),
+    radial-gradient(circle at 70% 40%, #fff3 0 8%, transparent 10%),
+    radial-gradient(circle at 60% 80%, #0003 0 10%, transparent 12%),
+    radial-gradient(circle at 40% 30%, var(--color-mercury-main) 0%, var(--color-mercury-dark) 80%, #222 100%);
+  box-shadow: 0 0 16px 4px var(--color-mercury-main), 0 0 0 2px var(--color-mercury-dark) inset;
+  filter: grayscale(0.7) brightness(0.97) contrast(1.08);
+}
+
+.planet.mercury::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle at 60% 60%, #fff2 0 1.5px, transparent 2px 8px),
+    repeating-radial-gradient(circle at 30% 30%, #0002 0 1.2px, transparent 1.5px 7px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .planet.venus {
   width: var(--venus-size); height: var(--venus-size);
-  background: radial-gradient(circle at 60% 40%, #ffe082 0%, #ffb300 100%);
-  box-shadow: 0 0 12px 3px #ffe082, 0 0 0 1px #ffb300 inset;
+  background:
+    linear-gradient(120deg, var(--color-venus-cloud) 0 40%, transparent 100%),
+    radial-gradient(circle at 60% 40%, var(--color-venus-main) 0%, #ffb300 60%, #c49000 100%);
+  box-shadow: 0 0 22px 7px var(--color-venus-main), 0 0 0 2px #ffb300 inset;
+  filter: sepia(0.3) brightness(1.08) blur(0.2px);
+}
+
+.planet.venus::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(100deg, #fff2 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(80deg, #fff1 0 1.5px, transparent 1.5px 7px);
+  opacity: 0.13;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .planet.earth {
   width: var(--earth-size); height: var(--earth-size);
-  background: radial-gradient(circle at 55% 45%, #2196f3 0%, #1565c0 60%, #43a047 100%);
-  box-shadow: 0 0 16px 4px #2196f3, 0 0 0 2px #43a047 inset;
+  background:
+    linear-gradient(120deg, var(--color-earth-cloud) 0 30%, transparent 100%),
+    radial-gradient(circle at 55% 45%, var(--color-earth-main) 0%, #1565c0 60%, var(--color-earth-land) 80%, #fff 100%);
+  box-shadow: 0 0 28px 10px var(--color-earth-main), 0 0 0 3px var(--color-earth-land) inset;
+  filter: brightness(1.13) saturate(1.22);
+}
+
+.planet.earth::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(60deg, #fff8 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(120deg, #fff4 0 1.5px, transparent 1.5px 7px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .planet.mars {
   width: var(--mars-size); height: var(--mars-size);
-  background: radial-gradient(circle at 60% 40%, #ff7043 0%, #bf360c 100%);
-  box-shadow: 0 0 10px 2px #ff7043, 0 0 0 1px #bf360c inset;
+  background:
+    radial-gradient(circle at 80% 20%, var(--color-mars-pole) 0 10%, transparent 12%),
+    radial-gradient(circle at 60% 40%, var(--color-mars-main) 0%, var(--color-mars-dark) 70%, #6d2b00 100%);
+  box-shadow: 0 0 18px 5px var(--color-mars-main), 0 0 0 2px var(--color-mars-dark) inset;
+  filter: sepia(0.2) brightness(1.08);
+}
+
+.planet.mars::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle at 70% 70%, #fff2 0 1.5px, transparent 2px 8px),
+    repeating-radial-gradient(circle at 30% 30%, #0002 0 1.2px, transparent 1.5px 7px);
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .planet.jupiter {
   width: var(--jupiter-size); height: var(--jupiter-size);
-  background: repeating-linear-gradient(120deg, #ffe0b2 0 6px, #bcaaa4 6px 12px, #ffe0b2 12px 18px), radial-gradient(circle at 60% 40%, #ffe0b2 0%, #bcaaa4 100%);
-  box-shadow: 0 0 24px 6px #ffe0b2, 0 0 0 2px #bcaaa4 inset;
+  background:
+    repeating-linear-gradient(120deg, var(--color-jupiter-main) 0 10px, var(--color-jupiter-band) 10px 20px, var(--color-jupiter-main) 20px 30px),
+    radial-gradient(circle at 60% 40%, var(--color-jupiter-main) 0%, var(--color-jupiter-band) 100%);
+  box-shadow: 0 0 44px 16px var(--color-jupiter-main), 0 0 0 5px var(--color-jupiter-band) inset;
+  filter: brightness(1.12) contrast(1.13);
+}
+
+.planet.jupiter::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 70% 60%, var(--color-jupiter-spot) 0 12%, transparent 16%),
+    repeating-linear-gradient(120deg, #fff2 0 2px, transparent 2px 8px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .planet.saturn {
   width: var(--saturn-size); height: var(--saturn-size);
-  background: radial-gradient(circle at 60% 40%, #fffde7 0%, #ffe082 100%);
-  box-shadow: 0 0 18px 4px #fffde7, 0 0 0 2px #ffe082 inset;
+  background:
+    repeating-linear-gradient(100deg, var(--color-saturn-main) 0 8px, var(--color-saturn-band) 8px 16px, var(--color-saturn-main) 16px 24px),
+    radial-gradient(circle at 60% 40%, var(--color-saturn-main) 0%, var(--color-saturn-band) 70%, var(--color-saturn-shadow) 100%);
+  box-shadow: 0 0 32px 10px var(--color-saturn-main), 0 0 0 4px var(--color-saturn-band) inset;
+  filter: brightness(1.10) sepia(0.13);
+}
+
+.planet.saturn::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(100deg, #fff2 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(80deg, #fff1 0 1.5px, transparent 1.5px 7px);
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .planet.uranus {
   width: var(--uranus-size); height: var(--uranus-size);
-  background: radial-gradient(circle at 60% 40%, #b2ebf2 0%, #0097a7 100%);
-  box-shadow: 0 0 14px 3px #b2ebf2, 0 0 0 2px #0097a7 inset;
+  background:
+    repeating-linear-gradient(90deg, var(--color-uranus-main) 0 6px, var(--color-uranus-band) 6px 12px, var(--color-uranus-main) 12px 18px),
+    radial-gradient(circle at 60% 40%, var(--color-uranus-main) 0%, var(--color-uranus-band) 80%, #005f6b 100%);
+  box-shadow: 0 0 24px 8px var(--color-uranus-main), 0 0 0 3px var(--color-uranus-band) inset;
+  filter: brightness(1.13) saturate(1.13);
 }
 
 .planet.neptune {
   width: var(--neptune-size); height: var(--neptune-size);
-  background: radial-gradient(circle at 60% 40%, #b3e5fc 0%, #01579b 100%);
-  box-shadow: 0 0 14px 3px #b3e5fc, 0 0 0 2px #01579b inset;
+  background:
+    repeating-linear-gradient(90deg, var(--color-neptune-main) 0 6px, var(--color-neptune-band) 6px 12px, var(--color-neptune-main) 12px 18px),
+    radial-gradient(circle at 60% 40%, var(--color-neptune-main) 0%, var(--color-neptune-band) 80%, #001f3f 100%);
+  box-shadow: 0 0 24px 8px var(--color-neptune-main), 0 0 0 3px var(--color-neptune-band) inset;
+  filter: brightness(1.12) saturate(1.18);
 }
 
-/* Atmosferas — camada externa difusa */
+.planet.neptune::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(90deg, #fff2 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(80deg, #fff1 0 1.5px, transparent 1.5px 7px);
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* === ATMOSFERAS MULTICAMADAS E EFEITOS ÓPTICOS ULTRA === */
+
 .planet::before {
   content: '';
   position: absolute;
-  top: -8%; left: -8%;
-  width: 116%; height: 116%;
+  top: -14%; left: -14%;
+  width: 128%; height: 128%;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--color-atmosphere-earth), transparent 80%);
-  filter: blur(4px) opacity(0.7);
+  background:
+    radial-gradient(circle, var(--color-atmosphere-earth) 0 60%, transparent 100%),
+    radial-gradient(circle, #fff8 0 30%, transparent 80%);
+  filter: blur(12px) opacity(var(--opacity-atmosphere)) brightness(1.13);
+  mix-blend-mode: lighten;
   pointer-events: none;
   z-index: 1;
 }
 
 .planet.sun::before {
-  background: radial-gradient(circle, #fffde7 0%, transparent 80%);
-  filter: blur(12px) opacity(0.8);
+  background:
+    radial-gradient(circle, #fffde7 0 40%, #ffe082 60%, transparent 100%),
+    radial-gradient(circle, #fff8 0 30%, transparent 80%);
+  filter: blur(24px) opacity(0.95) brightness(1.25);
+  mix-blend-mode: screen;
 }
 
-.planet.jupiter::before, .planet.saturn::before, .planet.uranus::before, .planet.neptune::before {
-  background: radial-gradient(circle, var(--color-atmosphere-gas), transparent 80%);
-  filter: blur(6px) opacity(0.5);
+.planet.venus::before {
+  background:
+    radial-gradient(circle, var(--color-atmosphere-venus) 0 60%, transparent 100%),
+    radial-gradient(circle, #fff8 0 30%, transparent 80%);
+  filter: blur(10px) opacity(0.85) brightness(1.08);
+  mix-blend-mode: lighten;
 }
 
-/* Anéis — Saturno e Urano */
+.planet.mars::before {
+  background:
+    radial-gradient(circle, var(--color-atmosphere-mars) 0 60%, transparent 100%),
+    radial-gradient(circle, #fff8 0 30%, transparent 80%);
+  filter: blur(8px) opacity(0.7) brightness(1.08);
+  mix-blend-mode: lighten;
+}
+
+.planet.neptune::before {
+  background:
+    radial-gradient(circle, var(--color-atmosphere-neptune) 0 60%, transparent 100%),
+    radial-gradient(circle, #fff8 0 30%, transparent 80%);
+  filter: blur(10px) opacity(0.8) brightness(1.12);
+  mix-blend-mode: lighten;
+}
+
+.planet.gas::before {
+  background:
+    radial-gradient(circle, var(--color-atmosphere-gas) 0 60%, transparent 100%),
+    radial-gradient(circle, #fff8 0 30%, transparent 80%);
+  filter: blur(14px) opacity(0.7) brightness(1.10);
+  mix-blend-mode: lighten;
+}
+
+/* Aberração cromática sutil e lens flare solar */
+
+.planet.sun::after {
+  /* Lens flare solar */
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 180%; height: 180%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffde7cc 0 30%, transparent 80%);
+  filter: blur(18px) opacity(0.5);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* === ANÉIS REALISTAS === */
 .planet.saturn::after, .planet.uranus::after {
   content: '';
   position: absolute;
   left: 50%; top: 50%;
-  width: 180%; height: 40%;
+  width: 220%; height: 60%;
   transform: translate(-50%, -50%) rotate(-20deg);
   border-radius: 50%;
-  border: 3px solid var(--color-ring-saturn);
-  opacity: 0.7;
+  border: 4px solid var(--color-ring-saturn);
+  border-top: 2px solid #fff4;
+  border-bottom: 2px solid #bfa76a88;
+  background: repeating-linear-gradient(90deg, #fff4 0 4px, transparent 4px 8px);
+  opacity: 0.55;
   pointer-events: none;
   z-index: 2;
+  filter: blur(0.5px) brightness(1.1);
 }
 
 .planet.uranus::after {
   border-color: var(--color-ring-uranus);
+  border-top: 2px solid #fff4;
+  border-bottom: 2px solid #0097a788;
+  background: repeating-linear-gradient(90deg, #fff4 0 3px, transparent 3px 7px);
   transform: translate(-50%, -50%) rotate(30deg);
 }
 
-/* Auroras, nuvens, tempestades — efeitos extras para a Terra */
+/* === DETALHES EXTRAS: AURORAS, NUVENS, TEMPESTADES === */
 .planet.earth .aurora {
   position: absolute;
-  top: 10%; left: 10%;
-  width: 80%; height: 20%;
+  top: 8%; left: 8%;
+  width: 84%; height: 22%;
   border-radius: 50%;
-  background: var(--color-aurora);
-  filter: blur(8px) opacity(0.5);
+  background: linear-gradient(120deg, #00ffe088 40%, #1e90ff44 100%);
+  filter: blur(10px) opacity(0.7) brightness(1.2);
   pointer-events: none;
   z-index: 3;
 }
 
 .planet.earth .clouds {
   position: absolute;
-  top: 20%; left: 15%;
-  width: 70%; height: 30%;
+  top: 18%; left: 12%;
+  width: 76%; height: 32%;
   border-radius: 50%;
-  background: var(--color-clouds);
-  filter: blur(4px) opacity(0.4);
+  background: linear-gradient(90deg, #fff8 60%, #b3e5fc44 100%);
+  filter: blur(6px) opacity(0.5);
   pointer-events: none;
   z-index: 3;
 }
 
 .planet.earth .storm {
   position: absolute;
-  top: 60%; left: 40%;
-  width: 18%; height: 8%;
+  top: 62%; left: 42%;
+  width: 20%; height: 10%;
   border-radius: 50%;
-  background: var(--color-storm);
-  filter: blur(2px) opacity(0.7);
+  background: radial-gradient(circle, #ff0a 60%, #fff0 100%);
+  filter: blur(3px) opacity(0.8);
   pointer-events: none;
   z-index: 3;
 }
@@ -156,58 +393,73 @@
   box-shadow: 0 0 0 2px var(--color-chromatic1), 0 0 0 4px var(--color-chromatic2);
 }
 
-/* Tooltips — nome do planeta acessível */
+/* === MICROINTERAÇÕES E TOOLTIP APRIMORADOS === */
+.planet:hover, .planet:focus {
+  transform: translateY(-8px) scale(1.07) rotate(-1deg);
+  box-shadow: 0 0 48px 18px var(--color-bloom), 0 0 0 6px var(--color-chromatic1) inset;
+  filter: brightness(1.18) drop-shadow(0 0 40px var(--color-bloom));
+  animation: planet-pulse 1.4s cubic-bezier(.4,0,.2,1) infinite alternate;
+}
+
+@keyframes planet-pulse {
+  0% { filter: brightness(1.12) drop-shadow(0 0 20px var(--color-bloom)); }
+  100% { filter: brightness(1.28) drop-shadow(0 0 48px var(--color-bloom)); }
+}
+
 .planet::after {
   content: attr(data-name);
   position: absolute;
-  left: 50%; top: 110%;
-  transform: translateX(-50%) scale(0.95);
-  padding: 2px 8px;
-  border-radius: 6px;
+  left: 50%; top: 112%;
+  transform: translateX(-50%) scale(0.93);
+  padding: 3px 12px;
+  border-radius: 8px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: opacity 0.25s, transform 0.25s;
   z-index: var(--z-tooltip);
-
-  /* Refinamento: reforço de contraste para acessibilidade */
-  box-shadow: 0 2px 8px 0 #0008;
-  background: rgb(34 34 34 / 96%);
+  box-shadow: 0 4px 16px 0 #000a;
+  background: linear-gradient(90deg, #222 80%, #444 100%);
   color: #fff;
-
-  /* Responsividade de tipografia em tooltips */
-  font-size: clamp(0.7em, 1.2vw, 1em);
+  font-size: clamp(0.8em, 1.3vw, 1.1em);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  text-shadow: 0 1px 2px #000a;
 }
 
 .planet:focus::after, .planet:hover::after {
   opacity: 1;
-  transform: translateX(-50%) scale(1);
+  transform: translateX(-50%) scale(1.04);
 }
 
-/* Foco visível — acessibilidade (unificado) */
 .planet:focus {
-  outline: 2.5px solid var(--color-chromatic2);
-  outline-offset: 5px;
+  outline: 3px solid var(--color-chromatic2);
+  outline-offset: 7px;
+  box-shadow: 0 0 0 4px #fff4;
 }
 
 /* Responsividade — tooltips menores em telas pequenas */
 @media (width <= 768px) {
   .planet::after {
-    font-size: 0.7em;
-    padding: 1px 6px;
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 6px;
   }
-}
 
-/* Microinteração: levitar e pulse ao hover/focus */
-.planet:hover, .planet:focus {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 0 32px 12px var(--color-bloom), 0 0 0 4px var(--color-chromatic1) inset;
-  filter: brightness(1.15) drop-shadow(0 0 32px var(--color-bloom));
-  animation: planet-pulse 1.2s cubic-bezier(.4,0,.2,1) infinite alternate;
-}
+  .planet {
+    box-shadow: 0 0 16px 6px var(--color-bloom), 0 0 0 2px var(--color-eclipse) inset;
+  }
 
-@keyframes planet-pulse {
-  0% { filter: brightness(1.1) drop-shadow(0 0 16px var(--color-bloom)); }
-  100% { filter: brightness(1.22) drop-shadow(0 0 32px var(--color-bloom)); }
+  :root {
+    --sun-size: 48px;
+    --mercury-size: 6px;
+    --venus-size: 10px;
+    --earth-size: 12px;
+    --mars-size: 8px;
+    --jupiter-size: 24px;
+    --saturn-size: 20px;
+    --uranus-size: 14px;
+    --neptune-size: 12px;
+  }
 }
 
 /* Inclua keyframes relevantes se necessário */
