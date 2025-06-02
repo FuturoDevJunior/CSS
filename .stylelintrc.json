@@ -4,6 +4,15 @@
   "rules": {
     "@stylistic/indentation": 2,
     "declaration-block-single-line-max-declarations": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "-webkit-backdrop-filter",
+          "-webkit-user-select"
+        ]
+      }
+    ]
   }
 } 

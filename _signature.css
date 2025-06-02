@@ -25,7 +25,7 @@
 
 /* Foco visível — acessibilidade */
 .signature:focus, .signature:hover {
-  background: var(--color-chromatic2, #ff00cc);
+  background: var(--color-chromatic2, #f0c);
   color: #fff;
   outline: 2px solid var(--color-chromatic1, #00ffe0);
 }

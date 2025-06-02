@@ -21,11 +21,11 @@ body, html {
   height: 100vh;
   overflow: hidden;
 }
+
 .solar-system {
   user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
 }
+
 @media (max-width: 700px) {
   .solar-system {
     min-width: 320px;
@@ -39,6 +39,7 @@ body, html {
     padding: 6px 12px;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
