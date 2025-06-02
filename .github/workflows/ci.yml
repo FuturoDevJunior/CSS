@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
       - name: Install dependencies
-        run: npm install -g stylelint stylelint-config-standard @stylistic/stylelint-plugin pa11y htmlhint
+        run: npm install -g stylelint stylelint-config-standard @stylistic/stylelint-plugin postcss pa11y htmlhint
       - name: Run stylelint
         run: |
           echo "Arquivos CSS encontrados:"
