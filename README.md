@@ -161,6 +161,14 @@ Sugestões, PRs e colaborações são muito bem-vindos!
 
 ---
 
+## ☕ Apoie este projeto
+
+Se este projeto te ajudou ou inspirou, considere apoiar meu trabalho:
+
+[![Buy Me a Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-support%20me-yellow?logo=buy-me-a-coffee&style=flat-square)](https://buymeacoffee.com/devferreirag)
+
+---
+
 ## 📂 Estrutura
 
 ```
@@ -212,3 +220,8 @@ MIT. Sinta-se livre para usar, modificar e contribuir!
 
 - [Gabriel Ferreira](https://linkedin.com/in/devferreirag) (autor)
 - Comunidade open sourcegit
+
+---
+
+> **Feito com paixão por CSS, acessibilidade e criatividade.  
+> Veja funcionando em [futurodevjunior.github.io/CSS/](https://futurodevjunior.github.io/CSS/)!**
