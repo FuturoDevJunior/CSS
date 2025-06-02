@@ -12,34 +12,52 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install dependencies
-        run: npm install -g stylelint stylelint-config-standard @stylistic/stylelint-plugin postcss pa11y htmlhint
-      - name: Run stylelint
+
+      - name: Instalar dependências globais
+        run: |
+          npm install -g stylelint stylelint-config-standard @stylistic/stylelint-plugin postcss pa11y htmlhint
+
+      - name: Lint CSS com Stylelint
         run: |
           echo "Arquivos CSS encontrados:"
           ls -al **/*.css || echo "Nenhum arquivo CSS encontrado"
           npx stylelint "**/*.css" --allow-empty-input
-      - name: Run htmlhint
+
+      - name: Lint HTML com HTMLHint
         run: |
           htmlhint '**/*.html' || exit 1
+
   accessibility:
     runs-on: ubuntu-latest
     needs: lint
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - name: Install pa11y
+
+      - name: Instalar Pa11y globalmente
         run: npm install -g pa11y
-      - name: Run pa11y on HTML files
+
+      - name: Instalar dependências de sandbox do Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgbm-dev
+          export DISPLAY=:99
+          /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+
+      - name: Testar acessibilidade com Pa11y em todos os HTML
         run: |
           for file in *.html; do
-            pa11y file://$PWD/$file || exit 1
+            pa11y --chrome-launch-options='["--no-sandbox", "--disable-setuid-sandbox"]' file://$PWD/$file || exit 1
           done 
