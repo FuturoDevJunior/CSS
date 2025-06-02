@@ -22,7 +22,7 @@ jobs:
 
       - name: Instalar dependências globais
         run: |
-          npm install -g stylelint stylelint-config-standard @stylistic/stylelint-plugin postcss pa11y htmlhint
+          npm install -g stylelint stylelint-config-standard @stylistic/stylelint-plugin postcss pa11y@latest htmlhint
 
       - name: Lint CSS com Stylelint
         run: |
@@ -47,7 +47,7 @@ jobs:
           node-version: '20'
 
       - name: Instalar Pa11y globalmente
-        run: npm install -g pa11y
+        run: npm install -g pa11y@latest
 
       - name: Instalar dependências de sandbox do Chrome
         run: |
@@ -59,5 +59,5 @@ jobs:
       - name: Testar acessibilidade com Pa11y em todos os HTML
         run: |
           for file in *.html; do
-            pa11y --chrome-launch-options='["--no-sandbox", "--disable-setuid-sandbox"]' file://$PWD/$file || exit 1
+            pa11y --chrome-launcher-flags="--no-sandbox --disable-setuid-sandbox" file://$PWD/$file || exit 1
           done 
