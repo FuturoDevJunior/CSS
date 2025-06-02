@@ -211,4 +211,4 @@ MIT. Sinta-se livre para usar, modificar e contribuir!
 ## 🙏 Créditos
 
 - [Gabriel Ferreira](https://linkedin.com/in/devferreirag) (autor)
-- Comunidade open source
+- Comunidade open sourcegit

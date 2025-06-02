@@ -11,15 +11,16 @@
   --color-star3: #ffd180;
   --z-bg: 0;
   --z-stars: 1;
+
   /* Granulação */
   --color-grain: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="2"/></filter><rect width="100" height="100" filter="url(%23grain)" opacity="0.18"/></svg>');
 
   /* === NEBULOSAS === */
-  --color-nebula1: rgba(0, 150, 255, 0.18);
-  --color-nebula2: rgba(255, 0, 200, 0.12);
-  --color-nebula3: rgba(255, 255, 255, 0.10);
-  --color-nebula4: rgba(0, 255, 200, 0.10);
-  --color-nebula5: rgba(255, 255, 0, 0.08);
+  --color-nebula1: rgb(0 150 255 / 18%);
+  --color-nebula2: rgb(255 0 200 / 12%);
+  --color-nebula3: rgb(255 255 255 / 10%);
+  --color-nebula4: rgb(0 255 200 / 10%);
+  --color-nebula5: rgb(255 255 0 / 8%);
   --z-nebula: 2;
   --nebula-opacity: 0.2;
 
@@ -41,20 +42,21 @@
   --uranus-size: 34px;
   --neptune-size: 32px;
   --moon-size: 6px;
+
   /* Atmosferas, anéis, auroras, nuvens, tempestades, scattering, bloom */
-  --color-atmosphere-earth: rgba(2,136,209,0.25);
-  --color-atmosphere-gas: rgba(255,255,255,0.10);
-  --color-aurora: linear-gradient(120deg, #00ffe0 0%, #00bfff 50%, #ff00cc 100%);
-  --color-clouds: rgba(255,255,255,0.18);
+  --color-atmosphere-earth: rgb(2 136 209 / 25%);
+  --color-atmosphere-gas: rgb(255 255 255 / 10%);
+  --color-aurora: linear-gradient(120deg, #00ffe0 0%, #00bfff 50%, #f0c 100%);
+  --color-clouds: rgb(255 255 255 / 18%);
   --color-storm: #fffde7;
-  --color-ring-saturn: rgba(255,235,59,0.35);
-  --color-ring-uranus: rgba(130,222,255,0.18);
-  --color-eclipse: rgba(0,0,0,0.45);
-  --color-flare: rgba(255,255,200,0.18);
-  --color-lens: rgba(255,255,255,0.10);
-  --color-bloom: rgba(255,255,255,0.18);
+  --color-ring-saturn: rgb(255 235 59 / 35%);
+  --color-ring-uranus: rgb(130 222 255 / 18%);
+  --color-eclipse: rgb(0 0 0 / 45%);
+  --color-flare: rgb(255 255 200 / 18%);
+  --color-lens: rgb(255 255 255 / 10%);
+  --color-bloom: rgb(255 255 255 / 18%);
   --color-chromatic1: #00ffe0;
-  --color-chromatic2: #ff00cc;
+  --color-chromatic2: #f0c;
   --z-planets: 10;
 
   /* === ÓRBITAS E EFEITOS 3D === */
@@ -77,13 +79,14 @@
   --color-planet-cvd: #e0e0e0;
 
   /* === RESPONSIVIDADE === */
+
   /* Os valores são sobrescritos em media queries */
 
   /* === MICROINTERAÇÕES E GLASSMORPHISM === */
   --glass-blur: 16px;
   --glass-saturate: 1.5;
-  --glass-bg: rgba(20,20,30,0.55);
-  --glass-border: 1.5px solid rgba(255,255,255,0.12);
+  --glass-bg: rgb(20 20 30 / 55%);
+  --glass-border: 1.5px solid rgb(255 255 255 / 12%);
   --glass-shadow: 0 2px 16px 2px #0006, 0 0 0 1.5px #fff2 inset;
   --focus-outline: 2.5px solid var(--color-chromatic2);
   --focus-offset: 5px;
@@ -92,7 +95,7 @@
 /************************************
  * MEDIA QUERIES DE VARIÁVEIS
  ************************************/
-@media (max-width: 400px) {
+@media (width <= 400px) {
   :root {
     --sun-size: 60px;
     --jupiter-size: 28px;
@@ -105,7 +108,8 @@
     --neptune-size: 12px;
   }
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   :root {
     --sun-size: 80px;
     --jupiter-size: 38px;
@@ -118,7 +122,8 @@
     --neptune-size: 16px;
   }
 }
-@media (max-width: 1024px) {
+
+@media (width <= 1024px) {
   :root {
     --sun-size: 100px;
     --jupiter-size: 48px;
@@ -131,7 +136,8 @@
     --neptune-size: 20px;
   }
 }
-@media (min-width: 1400px) {
+
+@media (width >= 1400px) {
   :root {
     --sun-size: 160px;
     --jupiter-size: 78px;
@@ -144,6 +150,7 @@
     --neptune-size: 42px;
   }
 }
+
 @media (forced-colors: active), (prefers-contrast: more) {
   :root {
     --color-bg: var(--color-bg-cvd);

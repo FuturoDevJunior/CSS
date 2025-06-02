@@ -1,7 +1,9 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["@stylistic/stylelint-plugin"],
   "rules": {
-    "indentation": 2,
-    "color-no-invalid-hex": true
+    "@stylistic/indentation": 2,
+    "declaration-block-single-line-max-declarations": null,
+    "no-descending-specificity": null
   }
 } 

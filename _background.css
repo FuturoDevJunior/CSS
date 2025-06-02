@@ -9,6 +9,7 @@
   pointer-events: none;
   will-change: transform, opacity;
 }
+
 .solar-system .stars1 {
   z-index: var(--z-stars);
   box-shadow:
@@ -29,8 +30,11 @@
     65vw 15vh 0 0 var(--color-star),
     75vw 35vh 0 0 var(--color-star3),
     85vw 55vh 0 0 var(--color-star);
+  animation: parallax-stars1 18s linear infinite alternate, twinkle 2.5s ease-in-out infinite;
 }
+
 /* ... Repita para .stars2, .stars3, .stars4, .nebula1, .nebula2, .nebula3, .meteor, .meteor2, .shooting-star, .shooting-star2, .firefly, .firefly2 ... */
+
 /* Inclua keyframes relevantes se necessário */
 
 /* === ANIMAÇÕES DE FUNDO REALISTAS === */
@@ -40,18 +44,22 @@
   0% { transform: translateY(0) scale(1); }
   100% { transform: translateY(10px) scale(1.01); }
 }
+
 @keyframes parallax-stars2 {
   0% { transform: translateY(0) scale(1); }
   100% { transform: translateY(20px) scale(1.02); }
 }
+
 @keyframes parallax-stars3 {
   0% { transform: translateY(0) scale(1); }
   100% { transform: translateY(30px) scale(1.03); }
 }
+
 @keyframes parallax-stars4 {
   0% { transform: translateY(0) scale(1); }
   100% { transform: translateY(40px) scale(1.04); }
 }
+
 @keyframes twinkle {
   0%, 100% { opacity: 1; }
   20% { opacity: 0.7; }
@@ -59,15 +67,15 @@
   60% { opacity: 0.5; }
   80% { opacity: 1; }
 }
-.solar-system .stars1 {
-  animation: parallax-stars1 18s linear infinite alternate, twinkle 2.5s ease-in-out infinite;
-}
+
 .solar-system .stars2 {
   animation: parallax-stars2 24s linear infinite alternate, twinkle 3.2s ease-in-out infinite;
 }
+
 .solar-system .stars3 {
   animation: parallax-stars3 32s linear infinite alternate, twinkle 2.8s ease-in-out infinite;
 }
+
 .solar-system .stars4 {
   animation: parallax-stars4 40s linear infinite alternate, twinkle 3.5s ease-in-out infinite;
 }
@@ -77,24 +85,29 @@
   0% { transform: translate(0,0) scale(1); filter: blur(8px) opacity(0.18); }
   100% { transform: translate(30px, -20px) scale(1.08); filter: blur(12px) opacity(0.22); }
 }
+
 @keyframes nebula-move2 {
   0% { transform: translate(0,0) scale(1); filter: blur(10px) opacity(0.12); }
   100% { transform: translate(-20px, 25px) scale(1.12); filter: blur(16px) opacity(0.16); }
 }
+
 @keyframes nebula-move3 {
   0% { transform: translate(0,0) scale(1); filter: blur(12px) opacity(0.10); }
   100% { transform: translate(15px, 10px) scale(1.05); filter: blur(18px) opacity(0.13); }
 }
+
 .solar-system .nebula1 {
   background: radial-gradient(circle at 60% 40%, var(--color-nebula1), transparent 70%);
   animation: nebula-move1 38s ease-in-out infinite alternate;
   will-change: transform, filter, opacity;
 }
+
 .solar-system .nebula2 {
   background: radial-gradient(circle at 30% 70%, var(--color-nebula2), transparent 80%);
   animation: nebula-move2 52s ease-in-out infinite alternate;
   will-change: transform, filter, opacity;
 }
+
 .solar-system .nebula3 {
   background: radial-gradient(circle at 80% 20%, var(--color-nebula3), transparent 80%);
   animation: nebula-move3 44s ease-in-out infinite alternate;
@@ -108,6 +121,7 @@
   80% { opacity: 1; }
   100% { opacity: 0; transform: translate(100vw, 100vh) scale(1.2); }
 }
+
 .solar-system .meteor, .solar-system .meteor2 {
   width: var(--asteroid-size);
   height: var(--asteroid-size);
@@ -120,16 +134,19 @@
   animation: meteor-move 12s linear infinite;
   will-change: transform, opacity;
 }
+
 .solar-system .meteor2 {
   top: 60vh; left: 80vw;
   animation-delay: 6s;
 }
+
 @keyframes shooting-star {
   0% { opacity: 0; transform: translate(-5vw, -5vh) scale(0.7); }
   10% { opacity: 1; }
   80% { opacity: 1; }
   100% { opacity: 0; transform: translate(120vw, 120vh) scale(1.1); }
 }
+
 .solar-system .shooting-star, .solar-system .shooting-star2 {
   width: 2px;
   height: 32px;
@@ -141,6 +158,7 @@
   animation: shooting-star 18s linear infinite;
   will-change: transform, opacity;
 }
+
 .solar-system .shooting-star2 {
   top: 80vh; left: 90vw;
   animation-delay: 9s;
@@ -155,10 +173,12 @@
   80% { transform: translate(-12vw, -10vh) scale(1); opacity: 0.7; }
   100% { transform: translate(0,0) scale(1); opacity: 0.7; }
 }
+
 @keyframes firefly-glow {
   0%, 100% { box-shadow: 0 0 8px 2px var(--color-firefly); }
   50% { box-shadow: 0 0 24px 8px var(--color-firefly2); }
 }
+
 .solar-system .firefly, .solar-system .firefly2 {
   width: 8px;
   height: 8px;
@@ -170,6 +190,7 @@
   animation: firefly-move 22s ease-in-out infinite, firefly-glow 2.2s ease-in-out infinite;
   will-change: transform, opacity, box-shadow;
 }
+
 .solar-system .firefly2 {
   top: 70vh; left: 60vw;
   background: var(--color-firefly2);
