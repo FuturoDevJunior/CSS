@@ -1,0 +1,87 @@
+/* === ASSINATURA GLASSMORPHISM E ANIMAÇÃO === */
+
+/* .signature — bloco principal da assinatura */
+.signature {
+  position: absolute;
+  bottom: 2vh; right: 2vw;
+  padding: 8px 18px;
+  border-radius: 18px;
+  background: rgba(20,20,30,0.82); /* contraste reforçado */
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+  color: #fff;
+  font-size: clamp(0.9em, 1.5vw, 1.2em);
+  box-shadow: 0 2px 24px 4px #000a, 0 0 0 1.5px #fff2 inset;
+  z-index: var(--z-signature);
+  opacity: 0.98;
+  transition: box-shadow 0.3s, opacity 0.3s;
+  animation: signature-fadein 2.2s cubic-bezier(.4,0,.2,1) 1;
+}
+/* Animação de entrada sutil */
+@keyframes signature-fadein {
+  from { opacity: 0; transform: translateY(24px) scale(0.95); }
+  to { opacity: 0.92; transform: translateY(0) scale(1); }
+}
+/* Link da assinatura */
+.signature a {
+  color: #00ffe0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+  position: relative;
+}
+.signature a:hover, .signature a:focus {
+  color: #ffd180;
+  text-decoration: underline;
+}
+/* Efeito decorativo de fundo (halo colorido) */
+.signature::before {
+  content: '';
+  position: absolute;
+  left: 12px; top: 12px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #00ffe0 0%, #ff00cc 100%);
+  opacity: 0.18;
+  filter: blur(8px);
+  z-index: -1;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  .signature {
+    font-size: 0.9em;
+    padding: 6px 12px;
+    right: 1vw; bottom: 1vh;
+  }
+}
+/* Foco visível — acessibilidade */
+.signature:focus {
+  outline: 2px solid #00ffe0;
+  outline-offset: 4px;
+}
+/* Sublinhado animado em links */
+.signature a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, #00ffe0 0%, #ffd180 100%);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.signature a:hover::after, .signature a:focus::after {
+  transform: scaleX(1);
+}
+/* Microinteração: levitar e pulse ao hover/focus */
+.signature:hover, .signature:focus {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 32px 8px #00ffe088, 0 0 0 2px #ffd180 inset;
+  opacity: 1;
+  animation: signature-pulse 1.2s cubic-bezier(.4,0,.2,1) infinite alternate;
+}
+@keyframes signature-pulse {
+  0% { filter: brightness(1) blur(0px); }
+  100% { filter: brightness(1.12) blur(1.5px); }
+}
+/* Inclua keyframes relevantes se necessário */ 

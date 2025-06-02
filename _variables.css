@@ -1,0 +1,153 @@
+/*
+ * VARIÁVEIS GLOBAIS E MEDIA QUERIES
+ * Organização: estrelas, fundo, granulação, nebulosas, meteoritos, planetas, atmosferas, anéis, auroras, nuvens, tempestades, scattering, bloom, tooltips, assinatura, acessibilidade, responsividade
+ * Todas as cores e tamanhos são customizáveis para temas e responsividade.
+ */
+:root {
+  /* === ESTRELAS E FUNDO === */
+  --color-bg: #070d1a;
+  --color-star: #fff;
+  --color-star2: #b3e5fc;
+  --color-star3: #ffd180;
+  --z-bg: 0;
+  --z-stars: 1;
+  /* Granulação */
+  --color-grain: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="2"/></filter><rect width="100" height="100" filter="url(%23grain)" opacity="0.18"/></svg>');
+
+  /* === NEBULOSAS === */
+  --color-nebula1: rgba(0, 150, 255, 0.18);
+  --color-nebula2: rgba(255, 0, 200, 0.12);
+  --color-nebula3: rgba(255, 255, 255, 0.10);
+  --color-nebula4: rgba(0, 255, 200, 0.10);
+  --color-nebula5: rgba(255, 255, 0, 0.08);
+  --z-nebula: 2;
+  --nebula-opacity: 0.2;
+
+  /* === METEORITOS, SHOOTING STARS, FIREFLIES === */
+  --asteroid-size: 7px;
+  --comet-size: 10px;
+  --color-firefly: #ffe066;
+  --color-firefly2: #b2ff59;
+  --z-meteor: 3;
+
+  /* === PLANETAS E SATÉLITES === */
+  --sun-size: 120px;
+  --mercury-size: 12px;
+  --venus-size: 22px;
+  --earth-size: 26px;
+  --mars-size: 18px;
+  --jupiter-size: 58px;
+  --saturn-size: 48px;
+  --uranus-size: 34px;
+  --neptune-size: 32px;
+  --moon-size: 6px;
+  /* Atmosferas, anéis, auroras, nuvens, tempestades, scattering, bloom */
+  --color-atmosphere-earth: rgba(2,136,209,0.25);
+  --color-atmosphere-gas: rgba(255,255,255,0.10);
+  --color-aurora: linear-gradient(120deg, #00ffe0 0%, #00bfff 50%, #ff00cc 100%);
+  --color-clouds: rgba(255,255,255,0.18);
+  --color-storm: #fffde7;
+  --color-ring-saturn: rgba(255,235,59,0.35);
+  --color-ring-uranus: rgba(130,222,255,0.18);
+  --color-eclipse: rgba(0,0,0,0.45);
+  --color-flare: rgba(255,255,200,0.18);
+  --color-lens: rgba(255,255,255,0.10);
+  --color-bloom: rgba(255,255,255,0.18);
+  --color-chromatic1: #00ffe0;
+  --color-chromatic2: #ff00cc;
+  --z-planets: 10;
+
+  /* === ÓRBITAS E EFEITOS 3D === */
+  --orbit-incline: 70deg;
+  --rotation-speed: 5s;
+  --pulse-speed: 12s;
+
+  /* === TOOLTIP E ACESSIBILIDADE === */
+  --color-tooltip-bg: #222;
+  --color-tooltip-light: #fff;
+  --color-tooltip-dark: #222;
+  --z-tooltip: 20;
+
+  /* === ASSINATURA === */
+  --z-signature: 1000;
+
+  /* === PALETA DALTÔNICA E ACESSIBILIDADE === */
+  --color-bg-cvd: #1a1a1a;
+  --color-star-cvd: #f5f5f5;
+  --color-planet-cvd: #e0e0e0;
+
+  /* === RESPONSIVIDADE === */
+  /* Os valores são sobrescritos em media queries */
+
+  /* === MICROINTERAÇÕES E GLASSMORPHISM === */
+  --glass-blur: 16px;
+  --glass-saturate: 1.5;
+  --glass-bg: rgba(20,20,30,0.55);
+  --glass-border: 1.5px solid rgba(255,255,255,0.12);
+  --glass-shadow: 0 2px 16px 2px #0006, 0 0 0 1.5px #fff2 inset;
+  --focus-outline: 2.5px solid var(--color-chromatic2);
+  --focus-offset: 5px;
+}
+
+/************************************
+ * MEDIA QUERIES DE VARIÁVEIS
+ ************************************/
+@media (max-width: 400px) {
+  :root {
+    --sun-size: 60px;
+    --jupiter-size: 28px;
+    --saturn-size: 22px;
+    --earth-size: 12px;
+    --mars-size: 8px;
+    --venus-size: 10px;
+    --mercury-size: 6px;
+    --uranus-size: 14px;
+    --neptune-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --sun-size: 80px;
+    --jupiter-size: 38px;
+    --saturn-size: 32px;
+    --earth-size: 16px;
+    --mars-size: 12px;
+    --venus-size: 14px;
+    --mercury-size: 8px;
+    --uranus-size: 18px;
+    --neptune-size: 16px;
+  }
+}
+@media (max-width: 1024px) {
+  :root {
+    --sun-size: 100px;
+    --jupiter-size: 48px;
+    --saturn-size: 38px;
+    --earth-size: 20px;
+    --mars-size: 14px;
+    --venus-size: 16px;
+    --mercury-size: 10px;
+    --uranus-size: 24px;
+    --neptune-size: 20px;
+  }
+}
+@media (min-width: 1400px) {
+  :root {
+    --sun-size: 160px;
+    --jupiter-size: 78px;
+    --saturn-size: 68px;
+    --earth-size: 36px;
+    --mars-size: 28px;
+    --venus-size: 32px;
+    --mercury-size: 18px;
+    --uranus-size: 44px;
+    --neptune-size: 42px;
+  }
+}
+@media (forced-colors: active), (prefers-contrast: more) {
+  :root {
+    --color-bg: var(--color-bg-cvd);
+    --color-star: var(--color-star-cvd);
+    --color-planet: var(--color-planet-cvd);
+  }
+} 

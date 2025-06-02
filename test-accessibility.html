@@ -1,0 +1,48 @@
+<!--
+  Teste de Acessibilidade - CSS Solar System 2025
+  Instruções:
+  1. Navegue com TAB para testar foco visível em planetas e assinatura.
+  2. Passe o mouse e use TAB para ver tooltips acessíveis.
+  3. Ative prefers-reduced-motion no sistema e recarregue.
+  4. Ative modo daltônico/alto contraste no sistema.
+  5. Verifique contraste de tooltips e assinatura.
+  6. Redimensione a janela para testar responsividade.
+-->
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Sistema Solar ultra realista, fluido, acessível e responsivo — 100% CSS, zero JS.">
+  <meta name="keywords" content="CSS, Sistema Solar, Acessibilidade, WCAG, Solar System, CSS Only, Planetas, Animação, Responsivo, Open Source, FuturoDevJunior">
+  <meta property="og:title" content="CSS Solar System 2025">
+  <meta property="og:description" content="Sistema Solar ultra realista, fluido, acessível e responsivo — 100% CSS, zero JS.">
+  <meta property="og:image" content="css.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://futurodevjunior.github.io/CSS/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CSS Solar System 2025">
+  <meta name="twitter:description" content="Sistema Solar ultra realista, fluido, acessível e responsivo — 100% CSS, zero JS.">
+  <meta name="twitter:image" content="css.png">
+</head>
+<link rel="stylesheet" href="styles.css">
+<main aria-label="Teste de Acessibilidade do Sistema Solar CSS" tabindex="-1">
+  <section aria-label="Instruções de acessibilidade" style="margin-bottom:1rem;">
+    <p id="instrucoes">
+      <strong>Instruções de Teste:</strong><br>
+      1. Use TAB para navegar entre planetas e assinatura.<br>
+      2. Passe o mouse ou use TAB para ver tooltips.<br>
+      3. Ative <code>prefers-reduced-motion</code> no sistema e recarregue.<br>
+      4. Ative modo daltônico/alto contraste no sistema.<br>
+      5. Verifique contraste de tooltips e assinatura.<br>
+      6. Redimensione a janela para testar responsividade.<br>
+    </p>
+  </section>
+  <div class="solar-system" aria-describedby="instrucoes" aria-label="Sistema Solar animado para teste de acessibilidade" role="region">
+    <div class="planet earth bloom chromatic" data-name="Terra" tabindex="0" aria-label="Terra">
+      <div class="aurora"></div>
+      <div class="clouds"></div>
+      <div class="storm"></div>
+    </div>
+    <div class="planet mars" data-name="Marte" tabindex="0" aria-label="Marte"></div>
+    <div class="planet jupiter" data-name="Júpiter" tabindex="0" aria-label="Júpiter"></div>
+    <div class="signature glass pulse" tabindex="0" aria-label="Assinatura do autor">by <a href="#">devferreirag</a></div>
+  </div>
+</main> 

@@ -1,0 +1,15 @@
+@import url('./_variables.css');
+@import url('./_reset.css');
+@import url('./_utilities.css');
+@import url('./_background.css');
+@import url('./_planets.css');
+@import url('./_signature.css');
+
+/* Modo daltônico: simulação de deuteranopia (verde-vermelho) */
+body.colorblind-mode {
+  filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="colorblind"><feColorMatrix type="matrix" values="0.625 0.375 0 0 0 0.7 0.3 0 0 0 0 0.3 0.7 0 0 0 0 0 1 0"/></filter></svg>#colorblind');
+  /* fallback para navegadores sem suporte a SVG filter */
+  filter: grayscale(0.5) contrast(1.2);
+}
+
+/* Instrução: para ativar, adicione <body class="colorblind-mode"> ou use um botão para alternar. */
