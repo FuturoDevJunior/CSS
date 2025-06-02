@@ -23,6 +23,7 @@ body, html {
 }
 
 .solar-system {
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -46,5 +47,49 @@ body, html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   TRANSIÇÕES E ANIMAÇÕES GLOBAIS
+   --------------------------------------------------------------------------- */
+
+h1, #data, #controls {
+  transition-property: opacity, margin;
+  transition-duration: var(--transition-medium);
+  transition-timing-function: var(--transition-ease);
+}
+
+h1        { transition-delay: 0.35s; }
+#data     { transition-delay: 0.7s; }
+#controls { transition-delay: 1s; }
+
+/* Estados de abertura: remove delays/durações para animação instantânea */
+.opening #solar-system,
+.opening #sun,
+.opening .orbit,
+.opening .pos,
+.opening .planet,
+.opening .satelite,
+.opening .ring,
+.opening .infos,
+.opening h1,
+.opening #data,
+.opening dl.infos,
+.opening #controls {
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+.pos            { transition-delay: var(--transition-slow); }
+.opening .pos   { transition-delay: 0s !important; }
+
+/* Fallback para acessibilidade: reduz movimento se preferido pelo usuário */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
   }
 }

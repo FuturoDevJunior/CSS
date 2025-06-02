@@ -10,7 +10,7 @@
       {
         "ignoreProperties": [
           "-webkit-backdrop-filter",
-          "-webkit-user-select"
+          "user-select"
         ]
       }
     ]

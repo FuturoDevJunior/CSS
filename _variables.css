@@ -90,6 +90,12 @@
   --glass-shadow: 0 2px 16px 2px #0006, 0 0 0 1.5px #fff2 inset;
   --focus-outline: 2.5px solid var(--color-chromatic2);
   --focus-offset: 5px;
+
+  /* === TRANSIÇÕES E ANIMAÇÕES GLOBAIS === */
+  --transition-fast: 0.3s;
+  --transition-medium: 0.8s;
+  --transition-slow: 1s;
+  --transition-ease: ease-in-out;
 }
 
 /************************************
