@@ -22,7 +22,9 @@ jobs:
           npm install -g stylelint stylelint-config-standard pa11y htmlhint
       - name: Run stylelint
         run: |
-          stylelint '**/*.css' --allow-empty-input
+          echo "Arquivos CSS encontrados:"
+          ls -al **/*.css || echo "Nenhum arquivo CSS encontrado"
+          npx stylelint "**/*.css" --allow-empty-input
       - name: Run htmlhint
         run: |
           htmlhint '**/*.html' || exit 1
