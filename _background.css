@@ -207,4 +207,9 @@
   }
 }
 
-/* ... restante do arquivo ... */ 
+/* ... restante do arquivo ... */
+
+body {
+  background: radial-gradient(ellipse at 50% 40%, #0a1830 0%, #070d1a 100%);
+  overflow: hidden;
+} 

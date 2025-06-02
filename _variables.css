@@ -16,7 +16,7 @@
   --color-grain: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="2"/></filter><rect width="100" height="100" filter="url(%23grain)" opacity="0.18"/></svg>');
 
   /* === NEBULOSAS === */
-  --color-nebula1: rgb(0 150 255 / 18%);
+  --color-nebula1: rgba(0,150,255,0.18);
   --color-nebula2: rgb(255 0 200 / 12%);
   --color-nebula3: rgb(255 255 255 / 10%);
   --color-nebula4: rgb(0 255 200 / 10%);
@@ -54,9 +54,9 @@
   --color-eclipse: rgb(0 0 0 / 45%);
   --color-flare: rgb(255 255 200 / 18%);
   --color-lens: rgb(255 255 255 / 10%);
-  --color-bloom: rgb(255 255 255 / 18%);
+  --color-bloom: rgba(255,255,255,0.18);
   --color-chromatic1: #00ffe0;
-  --color-chromatic2: #f0c;
+  --color-chromatic2: #ff00cc;
   --z-planets: 10;
 
   /* === ÓRBITAS E EFEITOS 3D === */

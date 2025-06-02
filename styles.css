@@ -14,3 +14,35 @@ body.colorblind-mode {
 }
 
 /* Instrução: para ativar, adicione <body class="colorblind-mode"> ou use um botão para alternar. */
+
+/* styles.css - Importa e finaliza os estilos do sistema solar */
+body, html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.solar-system {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 700px) {
+  .solar-system {
+    min-width: 320px;
+    min-height: 320px;
+    transform: scale(0.6);
+  }
+  .signature {
+    right: 8px;
+    bottom: 8px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
