@@ -69,13 +69,6 @@
 }
 
 /* Microinteração: levitar e pulse ao hover/focus */
-.signature:hover, .signature:focus {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 4px 32px 8px #00ffe088, 0 0 0 2px #ffd180 inset;
-  opacity: 1;
-  animation: signature-pulse 1.2s cubic-bezier(.4,0,.2,1) infinite alternate;
-}
-
 @keyframes signature-pulse {
   0% { filter: brightness(1) blur(0); }
   100% { filter: brightness(1.12) blur(1.5px); }

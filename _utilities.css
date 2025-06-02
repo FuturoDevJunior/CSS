@@ -5,7 +5,6 @@
 .glass {
   background: rgb(255 255 255 / 8%);
   backdrop-filter: blur(8px) saturate(1.2);
-  -webkit-backdrop-filter: blur(8px) saturate(1.2);
 
   /* Fallback visual: borda e sombra sutil */
   border: 1.5px solid rgb(255 255 255 / 12%);
