@@ -3,7 +3,11 @@
   Use prefers-color-scheme ou altere a classe do body para simular.
   Dica: Redimensione a janela para testar responsividade dos planetas e tooltips.
 -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <title>Exemplo Tema Claro/Escuro</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="Sistema Solar ultra realista, fluido, acessível e responsivo — 100% CSS, zero JS.">
   <meta name="keywords" content="CSS, Sistema Solar, Acessibilidade, WCAG, Solar System, CSS Only, Planetas, Animação, Responsivo, Open Source, FuturoDevJunior">
@@ -17,40 +21,43 @@
   <meta name="twitter:description" content="Sistema Solar ultra realista, fluido, acessível e responsivo — 100% CSS, zero JS.">
   <meta name="twitter:image" content="css.png">
 </head>
-<link rel="stylesheet" href="styles.css">
-<style>
-  /* Tema customizado: sobrescreva variáveis do :root */
-  body.custom-theme {
-    --color-bg: #181818;
-    --color-star: #ffecb3;
-    --color-nebula1: rgba(255, 100, 0, 0.18);
-    --color-bloom: rgba(255, 200, 0, 0.18);
-    --color-chromatic1: #ff9800;
-    --color-chromatic2: #ffd600;
-    --color-tooltip-bg: #222;
-    --color-tooltip-light: #ffd600;
-    --color-tooltip-dark: #222;
-  }
-</style>
-<main aria-label="Exemplo de Temas do Sistema Solar CSS" tabindex="-1">
-  <section aria-label="Instruções de temas" style="margin: 1rem;">
-    <button onclick="document.body.className='';" aria-label="Tema automático dark/light">Dark/Light automático</button>
-    <button onclick="document.body.className='custom-theme';" aria-label="Tema customizado">Tema Custom</button>
-    <p id="instrucoes-tema">
-      O tema segue o sistema (dark/light) por padrão.<br>
-      Clique em "Tema Custom" para ver um tema alternativo.<br>
-      Clique em "Dark/Light automático" para voltar ao padrão.
-    </p>
-  </section>
-  <div class="solar-system" aria-describedby="instrucoes-tema" aria-label="Sistema Solar animado com temas" role="region">
-    <div class="planet earth" data-name="Terra" tabindex="0" aria-label="Terra"></div>
-    <div class="planet mars" data-name="Marte" tabindex="0" aria-label="Marte"></div>
-    <div class="signature" tabindex="0" aria-label="Assinatura do autor">by <a href="#">devferreirag</a></div>
-  </div>
-</main>
-<!--
-  Instruções:
-  - O tema segue o sistema (dark/light) por padrão.
-  - Clique em "Tema Custom" para ver um tema alternativo.
-  - Clique em "Dark/Light automático" para voltar ao padrão.
---> 
+<body>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Tema customizado: sobrescreva variáveis do :root */
+    body.custom-theme {
+      --color-bg: #181818;
+      --color-star: #ffecb3;
+      --color-nebula1: rgba(255, 100, 0, 0.18);
+      --color-bloom: rgba(255, 200, 0, 0.18);
+      --color-chromatic1: #ff9800;
+      --color-chromatic2: #ffd600;
+      --color-tooltip-bg: #222;
+      --color-tooltip-light: #ffd600;
+      --color-tooltip-dark: #222;
+    }
+  </style>
+  <main aria-label="Exemplo de Temas do Sistema Solar CSS" tabindex="-1">
+    <section aria-label="Instruções de temas" style="margin: 1rem;">
+      <button onclick="document.body.className='';" aria-label="Tema automático dark/light">Dark/Light automático</button>
+      <button onclick="document.body.className='custom-theme';" aria-label="Tema customizado">Tema Custom</button>
+      <p id="instrucoes-tema">
+        O tema segue o sistema (dark/light) por padrão.<br>
+        Clique em "Tema Custom" para ver um tema alternativo.<br>
+        Clique em "Dark/Light automático" para voltar ao padrão.
+      </p>
+    </section>
+    <div class="solar-system" aria-describedby="instrucoes-tema" aria-label="Sistema Solar animado com temas" role="region">
+      <div class="planet earth" data-name="Terra" tabindex="0" aria-label="Terra"></div>
+      <div class="planet mars" data-name="Marte" tabindex="0" aria-label="Marte"></div>
+      <div class="signature" tabindex="0" aria-label="Assinatura do autor">by <a href="#">devferreirag</a></div>
+    </div>
+  </main>
+  <!--
+    Instruções:
+    - O tema segue o sistema (dark/light) por padrão.
+    - Clique em "Tema Custom" para ver um tema alternativo.
+    - Clique em "Dark/Light automático" para voltar ao padrão.
+  -->
+</body>
+</html> 

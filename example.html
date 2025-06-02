@@ -1,9 +1,8 @@
-<!--
-  Exemplo mínimo de uso do CSS Solar System 2025
-  Basta importar o styles.css e usar esta estrutura.
-  Dica: Redimensione a janela para testar responsividade dos planetas e tooltips.
--->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <title>Exemplo</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="Sistema Solar ultra realista, fluido, acessível e responsivo — 100% CSS, zero JS.">
   <meta name="keywords" content="CSS, Sistema Solar, Acessibilidade, WCAG, Solar System, CSS Only, Planetas, Animação, Responsivo, Open Source, FuturoDevJunior">
@@ -17,40 +16,43 @@
   <meta name="twitter:description" content="Sistema Solar ultra realista, fluido, acessível e responsivo — 100% CSS, zero JS.">
   <meta name="twitter:image" content="css.png">
 </head>
-<link rel="stylesheet" href="styles.css">
-<main aria-label="Exemplo de Sistema Solar CSS" tabindex="-1">
-  <div class="solar-system" aria-label="Sistema Solar animado" role="region">
-    <!-- Camadas de estrelas -->
-    <div class="stars1"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
-    <div class="stars4"></div>
-    <!-- Nebulosas -->
-    <div class="nebula1"></div>
-    <div class="nebula2"></div>
-    <div class="nebula3"></div>
-    <!-- Meteoritos, shooting stars, fireflies -->
-    <div class="meteor"></div>
-    <div class="meteor2"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star2"></div>
-    <div class="firefly"></div>
-    <div class="firefly2"></div>
-    <!-- Planetas -->
-    <div class="planet sun" data-name="Sol" tabindex="0" aria-label="Sol"></div>
-    <div class="planet mercury" data-name="Mercúrio" tabindex="0" aria-label="Mercúrio"></div>
-    <div class="planet venus" data-name="Vênus" tabindex="0" aria-label="Vênus"></div>
-    <div class="planet earth bloom chromatic" data-name="Terra" tabindex="0" aria-label="Terra">
-      <div class="aurora"></div>
-      <div class="clouds"></div>
-      <div class="storm"></div>
+<body>
+  <link rel="stylesheet" href="styles.css">
+  <main aria-label="Exemplo de Sistema Solar CSS" tabindex="-1">
+    <div class="solar-system" aria-label="Sistema Solar animado" role="region">
+      <!-- Camadas de estrelas -->
+      <div class="stars1"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+      <div class="stars4"></div>
+      <!-- Nebulosas -->
+      <div class="nebula1"></div>
+      <div class="nebula2"></div>
+      <div class="nebula3"></div>
+      <!-- Meteoritos, shooting stars, fireflies -->
+      <div class="meteor"></div>
+      <div class="meteor2"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star2"></div>
+      <div class="firefly"></div>
+      <div class="firefly2"></div>
+      <!-- Planetas -->
+      <div class="planet sun" data-name="Sol" tabindex="0" aria-label="Sol"></div>
+      <div class="planet mercury" data-name="Mercúrio" tabindex="0" aria-label="Mercúrio"></div>
+      <div class="planet venus" data-name="Vênus" tabindex="0" aria-label="Vênus"></div>
+      <div class="planet earth bloom chromatic" data-name="Terra" tabindex="0" aria-label="Terra">
+        <div class="aurora"></div>
+        <div class="clouds"></div>
+        <div class="storm"></div>
+      </div>
+      <div class="planet mars" data-name="Marte" tabindex="0" aria-label="Marte"></div>
+      <div class="planet jupiter" data-name="Júpiter" tabindex="0" aria-label="Júpiter"></div>
+      <div class="planet saturn" data-name="Saturno" tabindex="0" aria-label="Saturno"></div>
+      <div class="planet uranus" data-name="Urano" tabindex="0" aria-label="Urano"></div>
+      <div class="planet neptune" data-name="Netuno" tabindex="0" aria-label="Netuno"></div>
+      <!-- Assinatura -->
+      <div class="signature glass pulse" tabindex="0" aria-label="Assinatura do autor">by <a href="#">devferreirag</a></div>
     </div>
-    <div class="planet mars" data-name="Marte" tabindex="0" aria-label="Marte"></div>
-    <div class="planet jupiter" data-name="Júpiter" tabindex="0" aria-label="Júpiter"></div>
-    <div class="planet saturn" data-name="Saturno" tabindex="0" aria-label="Saturno"></div>
-    <div class="planet uranus" data-name="Urano" tabindex="0" aria-label="Urano"></div>
-    <div class="planet neptune" data-name="Netuno" tabindex="0" aria-label="Netuno"></div>
-    <!-- Assinatura -->
-    <div class="signature glass pulse" tabindex="0" aria-label="Assinatura do autor">by <a href="#">devferreirag</a></div>
-  </div>
-</main> 
+  </main>
+</body>
+</html> 
